@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Personalizacion Inventarios",
+    'name': "Personalizacion Inventarios Todos",
 
     'summary': """
        Este Modulo esta personalizado para algunas funciones propias """,
