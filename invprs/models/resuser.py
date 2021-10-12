@@ -24,9 +24,9 @@ class ResUser(models.Model):
     _inherit = 'res.users'
    
     location_ids = fields.Many2many(
-        comodel_name = 'stock.picking',
+        comodel_name = 'stock.location',
         relation ='location_user_rel',
         column1  ='user_id',
-        column2  ='location_dest_id',
+        column2  ='location_id',
         string   ='Ubicaciones ad Administradas',     
     )

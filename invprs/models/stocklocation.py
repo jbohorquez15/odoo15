@@ -21,12 +21,12 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
 class StockLocation(models.Model):
-    _inherit = 'stock.picking'
+    _inherit = 'stock.location'
    
     users_ids = fields.Many2many(
         comodel_name = 'res.users',
         relation ='location_user_rel',
-        column1  ='location_dest_id',
+        column1  ='location_id',
         column2  ='user_id',
         string   ='Usuarios Responsables',     
     )
