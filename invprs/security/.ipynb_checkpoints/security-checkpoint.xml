@@ -10,14 +10,14 @@
             <field name="name">Warehouse Restrictions Picking Types</field>
             <field name="model_id" search="[('model','=','stock.picking.type')]" model="ir.model"/>
             <field name="groups"
-                   eval="[(4, ref('dvit_warehouse_stock_restrictions.stock_restrictions_group'))]"/>
+                   eval="[(4, ref('invprs.stock_restrictions_group'))]"/>
             <field name="domain_force">[('id','in', user.default_picking_type_ids.ids)]</field>
         </record>
 
         <record id="filter_user_stock_picking_allowed" model="ir.rule">
             <field name="name">Warehouse Restrictions Pickings</field>
             <field name="model_id" search="[('model','=','stock.picking')]" model="ir.model"/>
-            <field name="groups" eval="[(4, ref('dvit_warehouse_stock_restrictions.stock_restrictions_group'))]"/>
+            <field name="groups" eval="[(4, ref('invprs.stock_restrictions_group'))]"/>
             <field name="domain_force">
               [('picking_type_id','in', user.default_picking_type_ids.ids),
               '|','|','|',
@@ -31,7 +31,7 @@
         <record id="filter_user_stock_location_allowed" model="ir.rule">
             <field name="name">Warehouse Restrictions locations</field>
             <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>
-            <field name="groups" eval="[(4, ref('dvit_warehouse_stock_restrictions.stock_restrictions_group'))]"/>
+            <field name="groups" eval="[(4, ref('invprs.stock_restrictions_group'))]"/>
             <field name="domain_force">
               ['|',
               ('id','in', user.stock_location_ids.ids),
