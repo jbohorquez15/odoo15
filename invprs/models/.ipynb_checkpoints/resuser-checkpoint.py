@@ -50,7 +50,7 @@ class ResUser(models.Model):
 
     @api.constrains('default_picking_type_ids')
     def update_restrict(self):
-        restrict_group = self.env.ref('dvit_warehouse_stock_restrictions.stock_restrictions_group')
+        restrict_group = self.env.ref('invprs.stock_restrictions_group')
         current_group = restrict_group
         if self.stock_location_ids:
             current_group.write({'users':  [(3, self.id)]})
@@ -65,7 +65,7 @@ class ResUser(models.Model):
     def tgl_restrict(self):
         # self.restrict_locations = not self.restrict_locations
         # res_groups = self.env['res.groups']
-        restrict_group = self.env.ref('dvit_warehouse_stock_restrictions.stock_restrictions_group')
+        restrict_group = self.env.ref('invprs.stock_restrictions_group')
         current_group = restrict_group
         if self.stock_location_ids:
             # Due to strange behaviuor, we must remove the user from the group then
